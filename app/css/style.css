@@ -1,0 +1,219 @@
+/*
+    # Общие свойства
+    # Header
+    # Модальное окно 1
+    # Модальное окно 2
+    # Main
+    # option (min-width: 0px) and (max-width: 749px)
+    # option (min-width: 750px)  and (max-width: 1399px)
+    # option (min-width: 1400px)
+    # footer
+ */
+
+/*  # Общие свойства */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+#invisibleObject { position: fixed; }
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh
+}
+
+/*  # Header */
+header {
+    background: url("../img/backgroundImg.png") no-repeat 0 100%;
+    background-size: 100vw;
+    flex-shrink: 0;
+}
+
+#infoPanel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0 10vw;
+    background-color: black;
+}
+
+.elementInfoPanelPhone, .elementInfoPanelMail {
+    height: 20px;
+    padding-right: 1%;
+}
+
+#orderACall {
+    border: none;
+    background: none;
+    color: #4F8FF0;
+    text-decoration: none;
+}
+
+#headerMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 112px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 0 10vw;
+}
+.navigationBar {
+    font-family: "Nunitom Sans", serif;
+    white-space: nowrap;
+}
+
+.navigationButton {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0 0.5vw;
+}
+
+#logo { height: 70%; }
+
+/*  # Свойства модальных окон */
+.modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all 0.8s ease 0s;
+}
+
+.content {
+    border-radius: 30px;
+    background-color: white;
+    padding: 30px;
+    max-width: 800px;
+    position: relative;
+    transition: all 0.8s ease 0s;
+    opacity: 0;
+    transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+}
+
+.modal:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal:target .content {
+    transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+    opacity: 1;
+}
+
+/*  # Модальное окно 1 */
+.orderACall_body {
+    display: flex;
+    min-height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+}
+
+.content {
+    border-radius: 30px;
+    background-color: white;
+    padding: 30px;
+    max-width: 800px;
+    position: relative;
+    transition: all 0.8s ease 0s;
+    opacity: 0;
+    transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+}
+
+.modal_Close {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    opacity: 30%;
+}
+
+/*  # Модальное окно 2 */
+.navigationMenu_body {
+    display: flex;
+    min-height: 100%;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.navigationMenu_body .content {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 0 30px;
+}
+
+.navigationButtonMenu {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 1vh 0;
+}
+
+/*  # Main */
+main { flex-grow: 1;}
+
+#reviews {
+    background-color: #0e3eb6;
+    height: 580px;
+}
+
+/*  # option (min-width: 0px) and (max-width: 749px) */
+
+@media screen and (min-width: 0px) and (max-width: 749px) {
+    .navigationButton { display: none; }
+    .elementInfoPanelMail { display: none; }
+
+    #headerMenu { height: 84px; }
+    #services { height: 550px; }
+    #about { height: 800px; }
+    #employees { height: 600px; }
+    #usefulMaterials { height: 750px; }
+}
+
+/* #  option (min-width: 750px)  and (max-width: 1399px) */
+
+@media screen and (min-width: 750px)  and (max-width: 1399px) {
+    .navigationButton { display: none; }
+
+    #headerMenu { height: 84px;}
+    #services { height: 1130px; }
+    #about { height: 500px; }
+    #employees { height: 720px; }
+    #usefulMaterials { height: 850px; }
+}
+
+/*  #  option (min-width: 1400px) */
+
+@media screen and (min-width: 1400px) {
+    .navigationMenu { display: none; }
+
+    #headerMenu { height: 112px; }
+    #services { height: 960px; }
+    #about { height: 600px; }
+    #employees { height: 750px; }
+    #usefulMaterials { height: 900px; }
+}
+
+/* #  footer */
+
+footer {
+    background-color: #1fa1c9;
+    flex-shrink: 0;
+    height: 100px;
+}
+
+/* Временая зона */
+
+#services { background-color: #30c91f;}
+#about { background-color: #c9521f;}
+#employees { background-color: #be1fc9;}
+#usefulMaterials { background-color: #c9ad1f;}
