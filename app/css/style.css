@@ -11,10 +11,6 @@
  */
 
 /*  # Общие свойства */
-* {
-    margin: 0;
-    padding: 0;
-}
 
 html { scroll-behavior: smooth; }
 
@@ -45,6 +41,7 @@ header {
 .elementInfoPanelPhone, .elementInfoPanelMail {
     height: 20px;
     padding-right: 1%;
+    margin: 0;
 }
 
 #orderACall {
